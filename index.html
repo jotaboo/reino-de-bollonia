@@ -7,10 +7,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reino de Bollonia | Portal Oficial</title>
+    <title>Reino de Bollonia · Portal Oficial</title>
 
+    <meta
+        name="description"
+        content="Portal oficial del Reino de Bollonia. Casa Real, identidad nacional, territorio, gobierno e historia."
+    >
 
-    <!-- TIPOGRAFÍAS -->
+    <!-- FUENTES -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -24,27 +28,68 @@
 
     <style>
 
-        /* =========================================
-           CONFIGURACIÓN GENERAL
-        ========================================= */
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --rosa: #d9afc8;
+
+            --rosa-claro: #f4e5ef;
+
+            --rosa-muy-claro: #fff9fd;
+
+            --morado: #806080;
+
+            --morado-oscuro: #493747;
+
+            --morado-texto: #634d60;
+
+            --dorado: #c9a96e;
+
+            --dorado-claro: #ead9ad;
+
+            --marfil: #fffdf9;
+
+            --gris: #796d77;
+
+            --borde: #eadde8;
+
+            --blanco: #ffffff;
+
+            --sombra:
+                0 15px 45px rgba(105, 75, 100, 0.08);
+        }
+
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
 
         * {
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             margin: 0;
 
             font-family: "Quicksand", sans-serif;
 
-            background: #fffafd;
+            background: var(--marfil);
 
-            color: #514452;
+            color: var(--morado-texto);
+
+            overflow-x: hidden;
         }
+
 
         a {
             text-decoration: none;
@@ -53,31 +98,65 @@
         }
 
 
-        /* =========================================
-           BARRA SUPERIOR
-        ========================================= */
+        ::selection {
+
+            background: var(--rosa);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           DECORACIÓN GLOBAL
+        ===================================================== */
+
+        .pattern {
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.035;
+
+            background-image:
+
+                radial-gradient(
+                    circle,
+                    var(--morado) 1px,
+                    transparent 1px
+                );
+
+            background-size: 25px 25px;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
 
         .top-bar {
 
-            background: #684d63;
+            background: var(--morado-oscuro);
 
-            color: #fff;
+            color: white;
 
             text-align: center;
 
             padding: 9px 15px;
 
-            font-size: 12px;
+            font-size: 11px;
 
-            font-weight: 600;
+            font-weight: 700;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.6px;
         }
 
 
-        /* =========================================
-           NAVBAR
-        ========================================= */
+        /* =====================================================
+           NAV
+        ===================================================== */
 
         nav {
 
@@ -93,13 +172,13 @@
 
             justify-content: space-between;
 
-            padding: 13px 45px;
+            padding: 12px 45px;
 
-            background: rgba(255,255,255,0.96);
+            background: rgba(255,255,255,0.95);
 
-            border-bottom: 1px solid #eadde8;
+            border-bottom: 1px solid var(--borde);
 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
 
@@ -109,13 +188,13 @@
 
             align-items: center;
 
-            gap: 12px;
+            gap: 11px;
 
-            color: #684d63;
+            color: var(--morado-oscuro);
+
+            font-size: 14px;
 
             font-weight: 700;
-
-            font-size: 15px;
 
             letter-spacing: 0.5px;
         }
@@ -123,9 +202,9 @@
 
         .nav-brand img {
 
-            width: 42px;
+            width: 43px;
 
-            height: 42px;
+            height: 43px;
 
             object-fit: contain;
         }
@@ -137,13 +216,13 @@
 
             align-items: center;
 
-            gap: 25px;
+            gap: 23px;
 
-            color: #755d70;
-
-            font-size: 13px;
+            font-size: 12px;
 
             font-weight: 600;
+
+            color: #725b6e;
         }
 
 
@@ -155,21 +234,33 @@
 
         .nav-links a:hover {
 
-            color: #b279a1;
+            color: var(--morado);
 
             transform: translateY(-1px);
         }
 
 
-        /* =========================================
+        .nav-button {
+
+            padding: 9px 15px;
+
+            border-radius: 50px;
+
+            background: var(--morado);
+
+            color: white !important;
+        }
+
+
+        /* =====================================================
            HERO
-        ========================================= */
+        ===================================================== */
 
         .hero {
 
             position: relative;
 
-            min-height: 650px;
+            min-height: 720px;
 
             overflow: hidden;
 
@@ -179,7 +270,7 @@
 
             justify-content: center;
 
-            padding: 80px 25px;
+            padding: 90px 25px;
 
             background:
 
@@ -190,8 +281,8 @@
                 ),
 
                 radial-gradient(
-                    circle at 85% 75%,
-                    rgba(255,255,255,0.45),
+                    circle at 80% 70%,
+                    rgba(255,255,255,0.55),
                     transparent 25%
                 ),
 
@@ -204,45 +295,80 @@
         }
 
 
-        /* DECORACIÓN */
+        .hero .pattern {
+
+            opacity: 0.04;
+        }
+
 
         .hero-decoration {
 
             position: absolute;
 
-            color: rgba(255,255,255,0.45);
+            color: rgba(255,255,255,0.55);
 
             pointer-events: none;
+
+            animation: float 5s ease-in-out infinite;
+        }
+
+
+        .decor-1 {
+
+            top: 90px;
+
+            left: 8%;
 
             font-size: 45px;
         }
 
 
-        .star-one {
+        .decor-2 {
 
-            top: 90px;
+            top: 170px;
 
-            left: 10%;
+            right: 10%;
+
+            font-size: 30px;
+
+            animation-delay: 1s;
         }
 
 
-        .star-two {
+        .decor-3 {
 
-            bottom: 90px;
+            bottom: 100px;
 
-            right: 13%;
+            right: 18%;
 
-            font-size: 30px;
+            font-size: 38px;
+
+            animation-delay: 2s;
         }
 
 
-        .heart-one {
+        .decor-4 {
 
-            top: 150px;
+            bottom: 150px;
 
-            right: 8%;
+            left: 13%;
 
-            font-size: 30px;
+            font-size: 25px;
+
+            animation-delay: 1.5s;
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
 
@@ -252,25 +378,25 @@
 
             z-index: 2;
 
-            max-width: 1200px;
-
             width: 100%;
+
+            max-width: 1250px;
 
             display: grid;
 
-            grid-template-columns: 1fr 1.5fr 1fr;
+            grid-template-columns: 1fr 1.6fr 1fr;
 
             align-items: center;
 
-            gap: 35px;
+            gap: 30px;
         }
 
 
-        /* =========================================
+        /* =====================================================
            ESCUDO
-        ========================================= */
+        ===================================================== */
 
-        .crest-side {
+        .hero-crest {
 
             display: flex;
 
@@ -278,38 +404,69 @@
         }
 
 
+        .crest-frame {
+
+            width: 270px;
+
+            height: 270px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.20);
+
+            border: 1px solid rgba(255,255,255,0.45);
+
+            box-shadow:
+                0 20px 45px rgba(80,50,75,0.15);
+
+            backdrop-filter: blur(5px);
+
+            animation: appear 1s ease;
+        }
+
+
         .crest {
 
-            width: 235px;
+            width: 220px;
 
-            height: 235px;
+            height: 220px;
 
             object-fit: contain;
 
             filter:
                 drop-shadow(
-                    0 18px 20px rgba(85,55,80,0.20)
+                    0 15px 18px rgba(70,45,65,0.20)
                 );
 
-            transition: transform 0.35s;
+            transition: 0.35s;
         }
 
 
         .crest:hover {
 
-            transform: scale(1.04) rotate(-1deg);
+            transform:
+                scale(1.04)
+                rotate(-1deg);
         }
 
 
-        /* =========================================
-           TEXTO HERO
-        ========================================= */
+        /* =====================================================
+           HERO TEXTO
+        ===================================================== */
 
         .hero-text {
 
             text-align: center;
 
             color: white;
+
+            animation: appear 1s ease 0.15s both;
         }
 
 
@@ -317,109 +474,98 @@
 
             display: inline-block;
 
-            padding: 7px 15px;
+            padding: 8px 18px;
 
             border: 1px solid rgba(255,255,255,0.55);
 
             border-radius: 50px;
 
-            font-size: 11px;
+            background: rgba(255,255,255,0.12);
+
+            font-size: 10px;
 
             font-weight: 700;
 
             text-transform: uppercase;
 
-            letter-spacing: 2px;
-
-            margin-bottom: 18px;
-
-            background: rgba(255,255,255,0.12);
+            letter-spacing: 3px;
         }
 
 
         .hero h1 {
 
-            margin: 0;
+            margin: 22px 0 0;
 
             font-family: "DM Serif Display", serif;
 
-            font-size: clamp(55px, 7vw, 88px);
+            font-size: clamp(55px, 7vw, 92px);
 
-            line-height: 0.92;
+            line-height: 0.88;
 
             font-weight: 400;
 
             text-shadow:
-                0 5px 20px rgba(80,50,75,0.18);
+                0 6px 22px rgba(75,45,70,0.18);
         }
 
 
         .english-name {
 
-            margin-top: 20px;
+            margin-top: 22px;
 
-            font-size: 14px;
+            font-size: 13px;
+
+            font-weight: 600;
 
             text-transform: uppercase;
 
             letter-spacing: 4px;
+        }
 
-            font-weight: 600;
 
-            opacity: 0.9;
+        .hero-divider {
+
+            width: 90px;
+
+            height: 1px;
+
+            margin: 22px auto;
+
+            background: rgba(255,255,255,0.65);
+
+            position: relative;
+        }
+
+
+        .hero-divider::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background: #d1b0cc;
+
+            padding: 0 10px;
+
+            font-size: 11px;
         }
 
 
         .motto {
-
-            margin-top: 28px;
 
             font-family: "DM Serif Display", serif;
 
             font-size: 22px;
 
             font-style: italic;
-
-            opacity: 0.95;
         }
 
-
-        /* =========================================
-           BANDERA
-        ========================================= */
-
-        .flag-side {
-
-            display: flex;
-
-            justify-content: center;
-        }
-
-
-        .flag {
-
-            width: 270px;
-
-            max-width: 100%;
-
-            border-radius: 7px;
-
-            box-shadow:
-                0 18px 28px rgba(80,50,75,0.20);
-
-            transition: transform 0.35s;
-        }
-
-
-        .flag:hover {
-
-            transform: scale(1.035);
-        }
-
-
-        /* =========================================
-           BOTÓN HERO
-        ========================================= */
 
         .hero-button {
 
@@ -429,18 +575,18 @@
 
             padding: 14px 25px;
 
-            background: white;
-
-            color: #70566c;
-
             border-radius: 50px;
 
-            font-size: 13px;
+            background: white;
+
+            color: var(--morado);
+
+            font-size: 12px;
 
             font-weight: 700;
 
             box-shadow:
-                0 10px 20px rgba(80,50,75,0.15);
+                0 12px 25px rgba(70,45,65,0.16);
 
             transition: 0.25s;
         }
@@ -451,21 +597,130 @@
             transform: translateY(-3px);
 
             box-shadow:
-                0 14px 25px rgba(80,50,75,0.20);
+                0 17px 30px rgba(70,45,65,0.22);
         }
 
 
-        /* =========================================
+        /* =====================================================
+           BANDERA
+        ===================================================== */
+
+        .hero-flag {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .flag-wrapper {
+
+            padding: 10px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.20);
+
+            border: 1px solid rgba(255,255,255,0.45);
+
+            backdrop-filter: blur(5px);
+
+            box-shadow:
+                0 20px 40px rgba(80,50,75,0.15);
+        }
+
+
+        .flag {
+
+            width: 270px;
+
+            max-width: 100%;
+
+            display: block;
+
+            border-radius: 5px;
+        }
+
+
+        /* =====================================================
+           SELLO OFICIAL
+        ===================================================== */
+
+        .official-seal {
+
+            position: absolute;
+
+            right: 45px;
+
+            bottom: 35px;
+
+            width: 105px;
+
+            height: 105px;
+
+            border: 2px solid rgba(255,255,255,0.6);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transform: rotate(-12deg);
+
+            opacity: 0.8;
+        }
+
+
+        .official-seal::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 11px;
+
+            font-size: 12px;
+        }
+
+
+        .official-seal::after {
+
+            content: "2025";
+
+            position: absolute;
+
+            bottom: 12px;
+
+            font-size: 8px;
+        }
+
+
+        /* =====================================================
            SECCIONES
-        ========================================= */
+        ===================================================== */
 
         .section {
 
-            max-width: 1150px;
+            position: relative;
+
+            max-width: 1180px;
 
             margin: auto;
 
-            padding: 85px 25px;
+            padding: 90px 25px;
         }
 
 
@@ -481,7 +736,7 @@
 
             color: #b279a1;
 
-            font-size: 11px;
+            font-size: 10px;
 
             font-weight: 800;
 
@@ -497,48 +752,47 @@
 
             font-family: "DM Serif Display", serif;
 
-            font-size: 43px;
+            font-size: 44px;
 
             font-weight: 400;
 
-            color: #624d60;
+            color: var(--morado-texto);
         }
 
 
         .section-header p {
 
-            max-width: 650px;
+            max-width: 680px;
 
             margin: auto;
 
-            line-height: 1.8;
+            color: var(--gris);
 
             font-size: 14px;
 
-            color: #796c77;
+            line-height: 1.8;
         }
 
 
-        /* =========================================
-           FICHA DEL REINO
-        ========================================= */
+        /* =====================================================
+           FICHA DEL ESTADO
+        ===================================================== */
 
         .country-card {
 
             display: grid;
 
-            grid-template-columns: 1.2fr 0.8fr;
-
-            background: white;
-
-            border: 1px solid #eadde8;
-
-            border-radius: 22px;
+            grid-template-columns: 1.25fr 0.75fr;
 
             overflow: hidden;
 
-            box-shadow:
-                0 15px 45px rgba(105,75,100,0.08);
+            background: white;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 22px;
+
+            box-shadow: var(--sombra);
         }
 
 
@@ -556,13 +810,23 @@
 
         .fact {
 
-            padding: 18px;
+            padding: 19px;
 
-            background: #fff9fd;
+            background: var(--rosa-muy-claro);
 
             border: 1px solid #f0e5ed;
 
-            border-radius: 13px;
+            border-radius: 14px;
+
+            transition: 0.25s;
+        }
+
+
+        .fact:hover {
+
+            transform: translateY(-3px);
+
+            border-color: var(--rosa);
         }
 
 
@@ -574,13 +838,13 @@
 
             color: #aa8a9f;
 
-            font-size: 10px;
+            font-size: 9px;
 
-            font-weight: 700;
+            font-weight: 800;
 
             text-transform: uppercase;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.3px;
         }
 
 
@@ -588,11 +852,13 @@
 
             color: #5c4859;
 
-            font-size: 14px;
+            font-size: 13px;
         }
 
 
         .country-message {
+
+            position: relative;
 
             display: flex;
 
@@ -605,9 +871,25 @@
             background:
                 linear-gradient(
                     145deg,
-                    #f4e5f0,
+                    #f4e5ef,
                     #fff9fd
                 );
+        }
+
+
+        .country-message::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 30px;
+
+            color: var(--dorado);
+
+            opacity: 0.6;
         }
 
 
@@ -617,7 +899,9 @@
 
             font-family: "DM Serif Display", serif;
 
-            font-size: 31px;
+            font-size: 32px;
+
+            line-height: 1.1;
 
             font-weight: 400;
 
@@ -627,31 +911,33 @@
 
         .country-message p {
 
-            line-height: 1.8;
+            margin: 8px 0;
 
             color: #746873;
 
-            font-size: 14px;
+            font-size: 13px;
+
+            line-height: 1.8;
         }
 
 
         .soft-button {
 
-            display: inline-block;
-
             align-self: flex-start;
 
-            margin-top: 15px;
+            display: inline-block;
+
+            margin-top: 18px;
 
             padding: 12px 20px;
 
             border-radius: 50px;
 
-            background: #80637a;
+            background: var(--morado);
 
             color: white;
 
-            font-size: 12px;
+            font-size: 11px;
 
             font-weight: 700;
 
@@ -663,19 +949,19 @@
 
             transform: translateY(-2px);
 
-            background: #6d5268;
+            background: var(--morado-oscuro);
         }
 
 
-        /* =========================================
-           SÍMBOLOS
-        ========================================= */
+        /* =====================================================
+           IDENTIDAD NACIONAL
+        ===================================================== */
 
         .symbols {
 
             display: grid;
 
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
 
             gap: 25px;
         }
@@ -687,9 +973,9 @@
 
             background: white;
 
-            border: 1px solid #eadde8;
+            border: 1px solid var(--borde);
 
-            border-radius: 18px;
+            border-radius: 19px;
 
             box-shadow:
                 0 12px 35px rgba(105,75,100,0.06);
@@ -702,16 +988,18 @@
 
         .symbol-card:hover {
 
-            transform: translateY(-7px);
+            transform: translateY(-8px);
 
             box-shadow:
-                0 20px 40px rgba(105,75,100,0.11);
+                0 20px 45px rgba(105,75,100,0.12);
         }
 
 
         .symbol-image {
 
-            height: 235px;
+            position: relative;
+
+            height: 245px;
 
             padding: 25px;
 
@@ -721,7 +1009,28 @@
 
             justify-content: center;
 
-            background: #fffafd;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffafd,
+                    #f9edf6
+                );
+        }
+
+
+        .symbol-image::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            right: 18px;
+
+            top: 15px;
+
+            color: var(--dorado);
+
+            opacity: 0.45;
         }
 
 
@@ -729,9 +1038,17 @@
 
             max-width: 90%;
 
-            max-height: 190px;
+            max-height: 195px;
 
             object-fit: contain;
+
+            transition: 0.3s;
+        }
+
+
+        .symbol-card:hover .symbol-image img {
+
+            transform: scale(1.04);
         }
 
 
@@ -763,28 +1080,180 @@
 
             line-height: 1.7;
 
-            color: #796d77;
+            color: var(--gris);
         }
 
 
-        /* =========================================
-           MONARQUÍA
-        ========================================= */
+        /* =====================================================
+           TERRITORIO
+        ===================================================== */
 
-        .royal-section {
+        .territory-section {
 
             background:
                 linear-gradient(
                     135deg,
-                    #f4e6f1,
+                    #faf0f7,
+                    #fffdf9
+                );
+        }
+
+
+        .territory {
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+
+        .map-card {
+
+            padding: 35px;
+
+            min-height: 400px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: white;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 22px;
+
+            box-shadow: var(--sombra);
+        }
+
+
+        .map-card img {
+
+            width: 100%;
+
+            max-height: 430px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 15px 15px rgba(80,50,75,0.10)
+                );
+        }
+
+
+        .territory-info {
+
+            padding-right: 15px;
+        }
+
+
+        .territory-info h3 {
+
+            margin: 0 0 15px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 35px;
+
+            font-weight: 400;
+
+            color: var(--morado-texto);
+        }
+
+
+        .territory-info p {
+
+            color: var(--gris);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        .capital-box {
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-left: 3px solid var(--dorado);
+
+            background: white;
+
+            border-radius: 0 12px 12px 0;
+
+            box-shadow: 0 8px 25px rgba(105,75,100,0.05);
+        }
+
+
+        .capital-box small {
+
+            color: #aa8a9f;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+
+        .capital-box strong {
+
+            display: block;
+
+            margin-top: 5px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 26px;
+
+            font-weight: 400;
+
+            color: var(--morado-texto);
+        }
+
+
+        /* =====================================================
+           CASA REAL
+        ===================================================== */
+
+        .royal-section {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1dfed,
                     #fffafd
                 );
         }
 
 
+        .royal-section .pattern {
+
+            opacity: 0.025;
+        }
+
+
         .royal-grid {
 
-            max-width: 900px;
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 950px;
 
             margin: auto;
 
@@ -798,26 +1267,54 @@
 
         .royal-card {
 
-            padding: 38px;
+            position: relative;
+
+            padding: 40px;
 
             text-align: center;
 
             background: white;
 
-            border: 1px solid #eadde8;
+            border: 1px solid var(--borde);
 
             border-radius: 20px;
 
             box-shadow:
                 0 12px 35px rgba(105,75,100,0.06);
+
+            overflow: hidden;
+        }
+
+
+        .royal-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--rosa),
+                    var(--dorado),
+                    var(--rosa)
+                );
         }
 
 
         .royal-crown {
 
-            font-size: 45px;
+            font-size: 43px;
 
-            margin-bottom: 8px;
+            margin-bottom: 7px;
         }
 
 
@@ -827,11 +1324,11 @@
 
             font-family: "DM Serif Display", serif;
 
-            font-size: 30px;
+            font-size: 32px;
 
             font-weight: 400;
 
-            color: #634d60;
+            color: var(--morado-texto);
         }
 
 
@@ -839,7 +1336,7 @@
 
             color: #b279a1;
 
-            font-size: 11px;
+            font-size: 10px;
 
             text-transform: uppercase;
 
@@ -851,19 +1348,174 @@
 
         .royal-card p {
 
-            margin-top: 18px;
+            max-width: 350px;
 
-            color: #796d77;
+            margin: 18px auto 0;
+
+            color: var(--gris);
 
             font-size: 13px;
 
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
 
-        /* =========================================
+        /* =====================================================
+           HISTORIA
+        ===================================================== */
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 10px 0;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 2px;
+
+            background: linear-gradient(
+                var(--rosa),
+                var(--dorado),
+                var(--rosa)
+            );
+
+            transform: translateX(-50%);
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            width: 50%;
+
+            padding: 20px 40px;
+
+            animation: appear 0.8s ease both;
+        }
+
+
+        .timeline-item:nth-child(odd) {
+
+            left: 0;
+
+            text-align: right;
+        }
+
+
+        .timeline-item:nth-child(even) {
+
+            left: 50%;
+        }
+
+
+        .timeline-dot {
+
+            position: absolute;
+
+            top: 28px;
+
+            width: 13px;
+
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            border: 3px solid var(--dorado);
+
+            z-index: 3;
+        }
+
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+
+            right: -7px;
+        }
+
+
+        .timeline-item:nth-child(even) .timeline-dot {
+
+            left: -7px;
+        }
+
+
+        .timeline-date {
+
+            color: #b279a1;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .timeline-card {
+
+            padding: 20px;
+
+            background: white;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 25px rgba(105,75,100,0.05);
+        }
+
+
+        .timeline-card h3 {
+
+            margin: 7px 0;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 22px;
+
+            font-weight: 400;
+
+            color: var(--morado-texto);
+        }
+
+
+        .timeline-card p {
+
+            margin: 0;
+
+            color: var(--gris);
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
            GOBIERNO
-        ========================================= */
+        ===================================================== */
 
         .government {
 
@@ -877,25 +1529,58 @@
 
         .government-card {
 
+            position: relative;
+
             padding: 25px 15px;
 
             text-align: center;
 
             background: white;
 
-            border: 1px solid #eadde8;
+            border: 1px solid var(--borde);
 
             border-radius: 15px;
 
             transition: 0.25s;
+
+            overflow: hidden;
         }
 
 
         .government-card:hover {
 
-            transform: translateY(-4px);
+            transform: translateY(-5px);
 
-            background: #fff8fc;
+            border-color: var(--rosa);
+
+            box-shadow:
+                0 12px 30px rgba(105,75,100,0.08);
+        }
+
+
+        .government-card::after {
+
+            content: "PRÓXIMAMENTE";
+
+            position: absolute;
+
+            top: 8px;
+
+            right: -29px;
+
+            transform: rotate(35deg);
+
+            font-size: 6px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            color: white;
+
+            background: var(--rosa);
+
+            padding: 3px 25px;
         }
 
 
@@ -911,9 +1596,13 @@
 
             margin: 5px 0;
 
-            font-size: 13px;
+            font-family: "DM Serif Display", serif;
 
-            color: #634d60;
+            font-size: 18px;
+
+            font-weight: 400;
+
+            color: var(--morado-texto);
         }
 
 
@@ -921,69 +1610,199 @@
 
             margin: 0;
 
-            font-size: 11px;
+            font-size: 10px;
 
             color: #a18d9d;
         }
 
 
-        /* =========================================
+        /* =====================================================
+           GRANDES BLOQUES
+        ===================================================== */
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+
+        .feature {
+
+            padding: 30px;
+
+            background: white;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 18px;
+
+            transition: 0.25s;
+        }
+
+
+        .feature:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: var(--sombra);
+        }
+
+
+        .feature-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .feature h3 {
+
+            margin: 0 0 8px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 24px;
+
+            font-weight: 400;
+
+            color: var(--morado-texto);
+        }
+
+
+        .feature p {
+
+            margin: 0;
+
+            color: var(--gris);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ========================================= */
+        ===================================================== */
 
         footer {
 
-            padding: 55px 20px;
+            position: relative;
+
+            padding: 65px 20px;
 
             text-align: center;
 
-            background: #493747;
+            background: var(--morado-oscuro);
 
             color: white;
+
+            overflow: hidden;
+        }
+
+
+        footer .pattern {
+
+            opacity: 0.035;
         }
 
 
         footer h2 {
 
+            position: relative;
+
+            z-index: 2;
+
             margin: 0;
 
             font-family: "DM Serif Display", serif;
 
-            font-size: 30px;
+            font-size: 34px;
 
             font-weight: 400;
         }
 
 
-        footer p {
-
-            color: #d9cbd7;
-
-            font-size: 12px;
-
-            margin-top: 10px;
-        }
-
-
         .footer-motto {
 
-            margin-top: 20px;
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 12px;
 
             font-family: "DM Serif Display", serif;
 
-            font-size: 17px;
+            font-size: 18px;
 
             font-style: italic;
 
-            color: #fff;
+            color: #f1e4ee;
         }
 
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
+        footer p {
 
-        @media (max-width: 950px) {
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 22px;
+
+            color: #cdbfcb;
+
+            font-size: 11px;
+        }
+
+
+        .footer-symbol {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 25px;
+
+            color: var(--dorado-claro);
+
+            font-size: 15px;
+
+            letter-spacing: 10px;
+        }
+
+
+        /* =====================================================
+           ANIMACIONES
+        ===================================================== */
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(15px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
 
             nav {
 
@@ -997,12 +1816,6 @@
             }
 
 
-            .hero {
-
-                padding: 65px 20px;
-            }
-
-
             .hero-content {
 
                 grid-template-columns: 1fr;
@@ -1011,21 +1824,41 @@
             }
 
 
+            .hero {
+
+                padding: 70px 20px;
+            }
+
+
+            .crest-frame {
+
+                width: 200px;
+
+                height: 200px;
+            }
+
+
             .crest {
 
-                width: 175px;
+                width: 165px;
 
-                height: 175px;
+                height: 165px;
             }
 
 
             .flag {
 
-                width: 250px;
+                width: 240px;
             }
 
 
             .country-card {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .territory {
 
                 grid-template-columns: 1fr;
             }
@@ -1042,20 +1875,62 @@
                 grid-template-columns: 1fr 1fr;
             }
 
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+            }
+
         }
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
+
+            .top-bar {
+
+                font-size: 9px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .hero {
+
+                min-height: auto;
+
+                padding: 60px 18px;
+            }
+
 
             .hero h1 {
 
-                font-size: 55px;
+                font-size: 57px;
+            }
+
+
+            .official-seal {
+
+                display: none;
+            }
+
+
+            .section {
+
+                padding: 65px 18px;
+            }
+
+
+            .section-header h2 {
+
+                font-size: 36px;
             }
 
 
             .facts {
 
                 grid-template-columns: 1fr;
+
+                padding: 22px;
             }
 
 
@@ -1077,9 +1952,39 @@
             }
 
 
-            .section {
+            .timeline::before {
 
-                padding: 60px 20px;
+                left: 10px;
+            }
+
+
+            .timeline-item {
+
+                width: 100%;
+
+                left: 0 !important;
+
+                text-align: left !important;
+
+                padding-left: 40px;
+
+                padding-right: 0;
+            }
+
+
+            .timeline-item .timeline-dot {
+
+                left: 3px !important;
+
+                right: auto !important;
+            }
+
+
+            .map-card {
+
+                min-height: 280px;
+
+                padding: 20px;
             }
 
         }
@@ -1092,46 +1997,72 @@
 <body>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          BARRA SUPERIOR
-    ========================================= -->
+    ===================================================== -->
 
     <div class="top-bar">
 
-        🇧🇴 PORTAL OFICIAL DEL REINO DE BOLLONIA · FUNDADO EL 10/02/2025
+        🇧🇴 PORTAL OFICIAL DEL REINO DE BOLLONIA
+        ·
+        FUNDADO EL 10 DE FEBRERO DE 2025
 
     </div>
 
 
-    <!-- =========================================
-         NAVEGACIÓN
-    ========================================= -->
+    <!-- =====================================================
+         NAV
+    ===================================================== -->
 
     <nav>
 
-        <a href="index.html" class="nav-brand">
+        <a
+            href="index.html"
+            class="nav-brand"
+        >
 
             <img
                 src="identidad/assets/identidad/escudo.png"
                 alt="Escudo del Reino de Bollonia"
             >
 
-            <span>REINO DE BOLLONIA</span>
+            <span>
+                REINO DE BOLLONIA
+            </span>
 
         </a>
 
 
         <div class="nav-links">
 
-            <a href="#reino">El Reino</a>
+            <a href="#reino">
+                El Reino
+            </a>
 
-            <a href="#simbolos">Símbolos</a>
+            <a href="#simbolos">
+                Identidad
+            </a>
 
-            <a href="#monarquia">Casa Real</a>
+            <a href="#territorio">
+                Territorio
+            </a>
 
-            <a href="#gobierno">Gobierno</a>
+            <a href="#corona">
+                Casa Real
+            </a>
 
-            <a href="identidad/index.html">
+            <a href="#historia">
+                Historia
+            </a>
+
+            <a href="#gobierno">
+                Gobierno
+            </a>
+
+            <a
+                href="identidad/index.html"
+                class="nav-button"
+            >
                 Identidad Nacional
             </a>
 
@@ -1140,23 +2071,29 @@
     </nav>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          HERO
-    ========================================= -->
+    ===================================================== -->
 
     <section class="hero">
 
+        <div class="pattern"></div>
 
-        <div class="hero-decoration star-one">
+
+        <div class="hero-decoration decor-1">
             ✦
         </div>
 
-        <div class="hero-decoration star-two">
-            ✦
-        </div>
-
-        <div class="hero-decoration heart-one">
+        <div class="hero-decoration decor-2">
             ♡
+        </div>
+
+        <div class="hero-decoration decor-3">
+            ✦
+        </div>
+
+        <div class="hero-decoration decor-4">
+            ❀
         </div>
 
 
@@ -1165,13 +2102,17 @@
 
             <!-- ESCUDO -->
 
-            <div class="crest-side">
+            <div class="hero-crest">
 
-                <img
-                    class="crest"
-                    src="identidad/assets/identidad/escudo.png"
-                    alt="Escudo Nacional del Reino de Bollonia"
-                >
+                <div class="crest-frame">
+
+                    <img
+                        class="crest"
+                        src="identidad/assets/identidad/escudo.png"
+                        alt="Escudo Nacional del Reino de Bollonia"
+                    >
+
+                </div>
 
             </div>
 
@@ -1181,23 +2122,34 @@
             <div class="hero-text">
 
                 <div class="official">
+
                     Portal Oficial
+
                 </div>
 
 
                 <h1>
+
                     Reino de<br>
                     Bollonia
+
                 </h1>
 
 
                 <div class="english-name">
+
                     The Kingdom of Bollonia
+
                 </div>
 
 
+                <div class="hero-divider"></div>
+
+
                 <div class="motto">
+
                     “Un pequeño reino, un amor enorme.”
+
                 </div>
 
 
@@ -1205,7 +2157,9 @@
                     href="#reino"
                     class="hero-button"
                 >
-                    Descubrir el Reino ↓
+
+                    DESCUBRIR EL REINO ↓
+
                 </a>
 
             </div>
@@ -1213,25 +2167,40 @@
 
             <!-- BANDERA -->
 
-            <div class="flag-side">
+            <div class="hero-flag">
 
-                <img
-                    class="flag"
-                    src="identidad/assets/identidad/bandera.png"
-                    alt="Bandera Nacional del Reino de Bollonia"
-                >
+                <div class="flag-wrapper">
+
+                    <img
+                        class="flag"
+                        src="identidad/assets/identidad/bandera.png"
+                        alt="Bandera Nacional del Reino de Bollonia"
+                    >
+
+                </div>
 
             </div>
 
 
         </div>
 
+
+        <!-- SELLO -->
+
+        <div class="official-seal">
+
+            REINO<br>
+            DE<br>
+            BOLLONIA
+
+        </div>
+
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          EL REINO
-    ========================================= -->
+    ===================================================== -->
 
     <section
         class="section"
@@ -1249,9 +2218,11 @@
             </h2>
 
             <p>
+
                 Un pequeño reino construido sobre una idea
                 extraordinariamente sencilla: crear juntos
                 un lugar al que siempre poder llamar hogar.
+
             </p>
 
         </div>
@@ -1279,6 +2250,19 @@
                 <div class="fact">
 
                     <small>
+                        Nombre inglés
+                    </small>
+
+                    <strong>
+                        The Kingdom of Bollonia
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <small>
                         Capital
                     </small>
 
@@ -1296,7 +2280,20 @@
                     </small>
 
                     <strong>
-                        10 de febrero de 2025
+                        10/02/2025
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <small>
+                        Sistema
+                    </small>
+
+                    <strong>
+                        Monarquía Constitucional de Poder Compartido
                     </strong>
 
                 </div>
@@ -1318,11 +2315,11 @@
                 <div class="fact">
 
                     <small>
-                        Sistema
+                        Moneda
                     </small>
 
                     <strong>
-                        Monarquía Constitucional
+                        MUK / MUKS
                     </strong>
 
                 </div>
@@ -1331,11 +2328,11 @@
                 <div class="fact">
 
                     <small>
-                        Moneda
+                        Banco Central
                     </small>
 
                     <strong>
-                        MUK / MUKS
+                        Banco Central del Bollito
                     </strong>
 
                 </div>
@@ -1373,23 +2370,29 @@
             <div class="country-message">
 
                 <h3>
+
                     Una nación pequeña.<br>
                     Una historia enorme.
+
                 </h3>
 
 
                 <p>
+
                     El Reino de Bollonia es una monarquía
                     constitucional de poder compartido,
                     fundada sobre la unión de sus dos
                     soberanos.
+
                 </p>
 
 
                 <p>
-                    Sus instituciones, sus símbolos y sus
-                    tradiciones forman una identidad propia
-                    que continúa creciendo cada día.
+
+                    Sus símbolos, instituciones, territorio
+                    y tradiciones forman una identidad propia
+                    que continúa creciendo con el paso del tiempo.
+
                 </p>
 
 
@@ -1397,20 +2400,21 @@
                     href="identidad/index.html"
                     class="soft-button"
                 >
-                    Explorar identidad nacional →
+
+                    EXPLORAR IDENTIDAD NACIONAL →
+
                 </a>
 
             </div>
-
 
         </div>
 
     </section>
 
 
-    <!-- =========================================
-         SÍMBOLOS NACIONALES
-    ========================================= -->
+    <!-- =====================================================
+         SÍMBOLOS
+    ===================================================== -->
 
     <section
         class="section"
@@ -1424,12 +2428,14 @@
             </div>
 
             <h2>
-                Los símbolos del Reino
+                Símbolos del Reino
             </h2>
 
             <p>
-                Los elementos que representan la historia,
-                la soberanía y el espíritu de Bollonia.
+
+                Los elementos que representan oficialmente
+                la historia, soberanía y personalidad de Bollonia.
+
             </p>
 
         </div>
@@ -1438,19 +2444,16 @@
         <div class="symbols">
 
 
-            <!-- BANDERA -->
-
             <div class="symbol-card">
 
                 <div class="symbol-image">
 
                     <img
                         src="identidad/assets/identidad/bandera.png"
-                        alt="Bandera Nacional"
+                        alt="Bandera Nacional de Bollonia"
                     >
 
                 </div>
-
 
                 <div class="symbol-info">
 
@@ -1459,8 +2462,10 @@
                     </h3>
 
                     <p>
-                        Símbolo oficial de la soberanía y
-                        la identidad del Reino de Bollonia.
+
+                        Símbolo oficial de la soberanía,
+                        identidad y unidad del Reino.
+
                     </p>
 
                 </div>
@@ -1468,19 +2473,16 @@
             </div>
 
 
-            <!-- ESCUDO -->
-
             <div class="symbol-card">
 
                 <div class="symbol-image">
 
                     <img
                         src="identidad/assets/identidad/escudo.png"
-                        alt="Escudo Nacional"
+                        alt="Escudo Nacional de Bollonia"
                     >
 
                 </div>
-
 
                 <div class="symbol-info">
 
@@ -1489,8 +2491,10 @@
                     </h3>
 
                     <p>
+
                         Emblema heráldico de la Corona
                         y del Estado bollonés.
+
                     </p>
 
                 </div>
@@ -1498,19 +2502,16 @@
             </div>
 
 
-            <!-- MAPA -->
-
             <div class="symbol-card">
 
                 <div class="symbol-image">
 
                     <img
                         src="identidad/assets/identidad/mapa.png"
-                        alt="Mapa del Reino"
+                        alt="Mapa del Reino de Bollonia"
                     >
 
                 </div>
-
 
                 <div class="symbol-info">
 
@@ -1519,8 +2520,10 @@
                     </h3>
 
                     <p>
-                        Representación cartográfica oficial
-                        del territorio del Reino.
+
+                        Representación oficial del territorio
+                        del Reino de Bollonia.
+
                     </p>
 
                 </div>
@@ -1533,14 +2536,109 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
+         TERRITORIO
+    ===================================================== -->
+
+    <section
+        class="territory-section"
+        id="territorio"
+    >
+
+        <div class="section">
+
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Geografía nacional
+                </div>
+
+                <h2>
+                    El Territorio
+                </h2>
+
+                <p>
+
+                    Una tierra propia para un reino único.
+
+                </p>
+
+            </div>
+
+
+            <div class="territory">
+
+
+                <div class="map-card">
+
+                    <img
+                        src="identidad/assets/identidad/mapa.png"
+                        alt="Mapa oficial del Reino de Bollonia"
+                    >
+
+                </div>
+
+
+                <div class="territory-info">
+
+                    <h3>
+                        El Reino de Bollonia
+                    </h3>
+
+
+                    <p>
+
+                        El territorio nacional constituye
+                        el hogar de la nación bollonesa y
+                        representa uno de los pilares de
+                        su identidad.
+
+                    </p>
+
+
+                    <p>
+
+                        En él se encuentra la capital,
+                        Rosabun, centro político, cultural
+                        e institucional del Reino.
+
+                    </p>
+
+
+                    <div class="capital-box">
+
+                        <small>
+                            Capital del Reino
+                        </small>
+
+                        <strong>
+                            🌸 Rosabun
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
          CASA REAL
-    ========================================= -->
+    ===================================================== -->
 
     <section
         class="royal-section"
-        id="monarquia"
+        id="corona"
     >
+
+        <div class="pattern"></div>
+
 
         <div class="section">
 
@@ -1556,7 +2654,9 @@
                 </h2>
 
                 <p>
-                    Dos soberanos. Un mismo Reino.
+
+                    Dos soberanos. Una Corona. Un mismo Reino.
+
                 </p>
 
             </div>
@@ -1564,8 +2664,6 @@
 
             <div class="royal-grid">
 
-
-                <!-- ALMUDENA -->
 
                 <div class="royal-card">
 
@@ -1582,14 +2680,14 @@
                     </div>
 
                     <p>
+
                         Soberana del Reino y titular de la
                         Corona bollonesa.
+
                     </p>
 
                 </div>
 
-
-                <!-- JUAN -->
 
                 <div class="royal-card">
 
@@ -1606,8 +2704,10 @@
                     </div>
 
                     <p>
+
                         Miembro de la Corona y soberano
                         consorte del Reino.
+
                     </p>
 
                 </div>
@@ -1620,9 +2720,151 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
+         HISTORIA
+    ===================================================== -->
+
+    <section
+        class="section"
+        id="historia"
+    >
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Archivo Nacional
+            </div>
+
+            <h2>
+                Historia de Bollonia
+            </h2>
+
+            <p>
+
+                Una historia que apenas acaba de comenzar.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="timeline-date">
+                        10 · 02 · 2025
+                    </div>
+
+                    <h3>
+                        Fundación del Reino
+                    </h3>
+
+                    <p>
+
+                        Nace oficialmente el Reino de Bollonia
+                        y comienza la historia de su Corona.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="timeline-date">
+                        Era fundacional
+                    </div>
+
+                    <h3>
+                        Nace la identidad nacional
+                    </h3>
+
+                    <p>
+
+                        Se establecen los primeros símbolos,
+                        colores y elementos que definen
+                        la identidad bollonesa.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="timeline-date">
+                        Era de consolidación
+                    </div>
+
+                    <h3>
+                        Se establece la Casa Real
+                    </h3>
+
+                    <p>
+
+                        La Corona se consolida como símbolo
+                        de unión y continuidad del Reino.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="timeline-date">
+                        Presente
+                    </div>
+
+                    <h3>
+                        El Reino continúa creciendo
+                    </h3>
+
+                    <p>
+
+                        Nuevas instituciones, territorios,
+                        tradiciones y recuerdos pasan a formar
+                        parte de la historia de Bollonia.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
          GOBIERNO
-    ========================================= -->
+    ===================================================== -->
 
     <section
         class="section"
@@ -1640,9 +2882,10 @@
             </h2>
 
             <p>
-                Doce ministerios forman la estructura
-                institucional del Reino y trabajan para
-                construir el futuro de Bollonia.
+
+                Doce ministerios forman los doce pilares
+                institucionales del Reino.
+
             </p>
 
         </div>
@@ -1652,204 +2895,178 @@
 
 
             <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio I</h3>
+                <p>Próximamente</p>
+            </div>
 
-                <div class="government-icon">
-                    🏛️
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio II</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio III</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio IV</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio V</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio VI</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio VII</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio VIII</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio IX</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio X</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio XI</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+            <div class="government-card">
+                <div class="government-icon">🏛️</div>
+                <h3>Ministerio XII</h3>
+                <p>Próximamente</p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INSTITUCIONES DESTACADAS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Estado bollonés
+            </div>
+
+            <h2>
+                Instituciones del Reino
+            </h2>
+
+            <p>
+
+                Algunas de las instituciones que forman
+                parte de la estructura nacional.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📜
                 </div>
 
                 <h3>
-                    Ministerio I
+                    Constitución
                 </h3>
 
                 <p>
-                    Próximamente
+
+                    Norma fundamental del Reino y base
+                    de su sistema de poder compartido.
+
                 </p>
 
             </div>
 
 
-            <div class="government-card">
+            <div class="feature">
 
-                <div class="government-icon">
-                    🏛️
+                <div class="feature-icon">
+                    🏦
                 </div>
 
                 <h3>
-                    Ministerio II
+                    Banco Central del Bollito
                 </h3>
 
                 <p>
-                    Próximamente
+
+                    Institución responsable de la moneda
+                    nacional MUK y del sistema monetario.
+
                 </p>
 
             </div>
 
 
-            <div class="government-card">
+            <div class="feature">
 
-                <div class="government-icon">
-                    🏛️
+                <div class="feature-icon">
+                    🏅
                 </div>
 
                 <h3>
-                    Ministerio III
+                    Honores y Condecoraciones
                 </h3>
 
                 <p>
-                    Próximamente
-                </p>
 
-            </div>
+                    Distinciones destinadas a reconocer
+                    los méritos de los ciudadanos del Reino.
 
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio IV
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio V
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio VI
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio VII
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio VIII
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio IX
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio X
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio XI
-                </h3>
-
-                <p>
-                    Próximamente
-                </p>
-
-            </div>
-
-
-            <div class="government-card">
-
-                <div class="government-icon">
-                    🏛️
-                </div>
-
-                <h3>
-                    Ministerio XII
-                </h3>
-
-                <p>
-                    Próximamente
                 </p>
 
             </div>
@@ -1860,27 +3077,47 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================= -->
+    ===================================================== -->
 
     <footer>
+
+        <div class="pattern"></div>
+
 
         <h2>
             👑 Reino de Bollonia
         </h2>
 
+
         <div class="footer-motto">
+
             “Un pequeño reino, un amor enorme.”
+
         </div>
 
-        <p>
-            Portal Oficial del Reino · Casa Real de Bollonia
-        </p>
+
+        <div class="footer-symbol">
+            ✦ ❀ ✦
+        </div>
+
 
         <p>
-            © 2025–2026 · Todos los derechos reservados
+
+            Portal Oficial del Reino de Bollonia
+            ·
+            Casa Real de Bollonia
+
         </p>
+
+
+        <p>
+
+            © 2025–2026 · Todos los derechos reservados
+
+        </p>
+
 
     </footer>
 
