@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Identidad Nacional | Reino de Bollonia</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -15,25 +20,26 @@
 
         header {
             background: #d8b6c8;
-            padding: 25px;
+            padding: 35px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
             color: white;
-            font-size: 32px;
+            font-size: 38px;
         }
 
         header p {
-            margin: 8px 0 0;
+            margin-top: 10px;
             color: white;
+            font-size: 18px;
             font-style: italic;
         }
 
         nav {
             background: white;
-            padding: 15px;
+            padding: 16px;
             text-align: center;
             border-bottom: 1px solid #ddd;
         }
@@ -53,9 +59,49 @@
 
         .intro {
             background: white;
-            padding: 25px;
+            padding: 28px;
             border-left: 5px solid #a87c99;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            border-radius: 5px;
+        }
+
+        .intro h2 {
+            color: #79506a;
+            margin-top: 0;
+        }
+
+        .national-symbols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .symbol {
+            background: white;
+            border: 1px solid #e4dbe2;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .symbol h2 {
+            color: #79506a;
+        }
+
+        .symbol img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .map {
+            grid-column: 1 / -1;
+        }
+
+        .map img {
+            max-height: 500px;
         }
 
         .grid {
@@ -82,11 +128,21 @@
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             background: #3f3140;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .national-symbols {
+                grid-template-columns: 1fr;
+            }
+
+            .map {
+                grid-column: auto;
+            }
         }
     </style>
 </head>
@@ -111,9 +167,10 @@
         <h2>Identidad Nacional</h2>
 
         <p>
-            La identidad nacional del Reino de Bollonia está formada por
-            aquellos símbolos, instituciones y elementos que representan
-            la historia, la cultura y los valores del pueblo bollonés.
+            La identidad nacional del Reino de Bollonia está formada
+            por aquellos símbolos, instituciones y elementos que
+            representan la historia, la cultura y los valores del
+            pueblo bollonés.
         </p>
 
         <p>
@@ -122,6 +179,58 @@
             la convivencia y el amor.
         </p>
     </section>
+
+
+    <!-- SÍMBOLOS NACIONALES -->
+
+    <section class="national-symbols">
+
+        <div class="symbol">
+            <h2>🚩 Bandera Nacional</h2>
+
+            <img
+                src="../assets/identidad/bandera.png"
+                alt="Bandera del Reino de Bollonia"
+            >
+
+            <p>
+                Bandera oficial del Reino de Bollonia.
+            </p>
+        </div>
+
+
+        <div class="symbol">
+            <h2>🛡️ Escudo Nacional</h2>
+
+            <img
+                src="../assets/identidad/escudo.png"
+                alt="Escudo del Reino de Bollonia"
+            >
+
+            <p>
+                Escudo oficial del Reino de Bollonia.
+            </p>
+        </div>
+
+
+        <div class="symbol map">
+            <h2>🗺️ Territorio Nacional</h2>
+
+            <img
+                src="../assets/identidad/mapa.png"
+                alt="Mapa del Reino de Bollonia"
+            >
+
+            <p>
+                Representación cartográfica oficial del territorio
+                del Reino de Bollonia.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- INFORMACIÓN NACIONAL -->
 
     <section class="grid">
 
@@ -140,8 +249,15 @@
 
         <div class="card">
             <h2>👑 Monarquía</h2>
-            <p><strong>Reina:</strong> Almudena I de Bollonia</p>
-            <p><strong>Rey Consorte:</strong> Juan I de Bollonia</p>
+            <p>
+                <strong>Reina:</strong>
+                Almudena I de Bollonia
+            </p>
+
+            <p>
+                <strong>Rey Consorte:</strong>
+                Juan I de Bollonia
+            </p>
         </div>
 
         <div class="card">
@@ -156,24 +272,38 @@
 
         <div class="card">
             <h2>👥 Gentilicio</h2>
-            <p><strong>Oficial:</strong> Bollonés / Bollonesa</p>
-            <p><strong>Coloquial:</strong> Bollones</p>
+            <p>
+                <strong>Oficial:</strong>
+                Bollonés / Bollonesa
+            </p>
+
+            <p>
+                <strong>Coloquial:</strong>
+                Bollones
+            </p>
         </div>
 
         <div class="card">
             <h2>💵 Moneda</h2>
             <p class="value">MUK / MUKS</p>
-            <p>Banco Central del Bollito (BCB)</p>
+
+            <p>
+                Banco Central del Bollito (BCB)
+            </p>
         </div>
 
         <div class="card">
             <h2>🌸 Flor nacional</h2>
-            <p class="value">Peonía Real de Bollonia</p>
+            <p class="value">
+                Peonía Real de Bollonia
+            </p>
         </div>
 
         <div class="card">
             <h2>🐧 Animal nacional</h2>
-            <p class="value">Pingüino Emperador</p>
+            <p class="value">
+                Pingüino Emperador
+            </p>
         </div>
 
         <div class="card">
@@ -185,39 +315,27 @@
 
     </section>
 
-    <section class="intro" style="margin-top: 30px;">
+
+    <!-- HIMNO -->
+
+    <section class="intro" style="margin-top: 35px;">
 
         <h2>🎵 Himno Nacional</h2>
 
         <p>
-            El Reino de Bollonia cuenta con un himno nacional
-            que representa los valores y el espíritu del pueblo bollonés.
+            El Reino de Bollonia cuenta con un himno nacional que
+            representa los valores y el espíritu del pueblo bollonés.
         </p>
 
         <p>
-            <strong>Himno oficial:</strong> Disponible en el archivo
-            correspondiente de la identidad nacional.
-        </p>
-
-    </section>
-
-    <section class="intro">
-
-        <h2>🚩 Símbolos Nacionales</h2>
-
-        <p>
-            La bandera, el escudo, el mapa y el himno constituyen
-            los principales símbolos oficiales del Reino de Bollonia.
-        </p>
-
-        <p>
-            Estos elementos representan la soberanía, la historia
-            y la identidad colectiva del Reino.
+            <strong>Himno oficial:</strong>
+            Próximamente disponible.
         </p>
 
     </section>
 
 </main>
+
 
 <footer>
     <p>Reino de Bollonia · Casa Real de Bollonia</p>
