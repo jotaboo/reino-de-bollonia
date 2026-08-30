@@ -1,1 +1,2697 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Historia de la Corona · Reino de Bollonia</title>
+
+    <meta
+        name="description"
+        content="Archivo histórico de la Corona del Reino de Bollonia."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --pergamino: #f4e7c9;
+
+            --pergamino-claro: #fff8e7;
+
+            --pergamino-oscuro: #dfc99c;
+
+            --tinta: #4d302c;
+
+            --tinta-suave: #70504a;
+
+            --rojo: #7d3942;
+
+            --rojo-claro: #a45d64;
+
+            --dorado: #b28a45;
+
+            --dorado-claro: #d6bd7d;
+
+            --sombra:
+                rgba(72, 43, 34, 0.16);
+
+            --rosa-bollonia: #c995ad;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            color: var(--tinta);
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center,
+                    #f5e8cb 0%,
+                    #ead5ac 65%,
+                    #d8bb87 100%
+                );
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           TEXTURA
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+            opacity: 0.06;
+
+            background-image:
+
+                radial-gradient(
+                    circle,
+                    #5d392f 0.7px,
+                    transparent 0.8px
+                );
+
+            background-size: 17px 17px;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        ::selection {
+
+            background: var(--rosa-bollonia);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           NAVEGACIÓN
+        ===================================================== */
+
+        .top-navigation {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 50;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 13px 6%;
+
+            background:
+                rgba(255,248,231,0.92);
+
+            border-bottom:
+                1px solid rgba(125,57,66,0.2);
+
+            backdrop-filter: blur(10px);
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: var(--rojo);
+        }
+
+
+        .nav-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .nav-crown {
+
+            font-size: 18px;
+        }
+
+
+        .nav-back {
+
+            padding: 8px 15px;
+
+            border:
+                1px solid rgba(125,57,66,0.25);
+
+            border-radius: 50px;
+
+            transition: 0.25s;
+        }
+
+
+        .nav-back:hover {
+
+            background: var(--rojo);
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           CONTENEDOR PRINCIPAL
+        ===================================================== */
+
+        .book {
+
+            position: relative;
+
+            width: min(1120px, 92%);
+
+            margin: 45px auto 80px;
+
+            padding: 70px 70px 90px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(110,70,45,0.08),
+                    transparent 5%,
+                    transparent 95%,
+                    rgba(110,70,45,0.08)
+                ),
+
+                var(--pergamino-claro);
+
+            box-shadow:
+
+                0 25px 70px
+                var(--sombra);
+
+            border:
+
+                1px solid rgba(125,57,66,0.18);
+
+            min-height: 100vh;
+        }
+
+
+        /* bordes decorativos */
+
+        .book::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 17px;
+
+            border:
+
+                1px solid rgba(178,138,69,0.55);
+
+            pointer-events: none;
+        }
+
+
+        .book::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 24px;
+
+            border:
+
+                1px solid rgba(178,138,69,0.18);
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           CABECERA
+        ===================================================== */
+
+        .archive-header {
+
+            position: relative;
+
+            text-align: center;
+
+            margin-bottom: 75px;
+
+            z-index: 2;
+        }
+
+
+        .archive-small {
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            color: var(--rojo);
+
+            text-transform: uppercase;
+        }
+
+
+        .archive-header h1 {
+
+            margin: 18px 0 8px;
+
+            font-size: clamp(48px, 7vw, 78px);
+
+            font-weight: 500;
+
+            line-height: 0.9;
+
+            color: var(--rojo);
+        }
+
+
+        .archive-subtitle {
+
+            font-size: 18px;
+
+            font-style: italic;
+
+            color: var(--tinta-suave);
+        }
+
+
+        .ornament {
+
+            margin: 25px auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            color: var(--dorado);
+
+            font-size: 18px;
+        }
+
+
+        .ornament::before,
+        .ornament::after {
+
+            content: "";
+
+            width: 110px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    var(--dorado)
+                );
+        }
+
+
+        .ornament::after {
+
+            background:
+                linear-gradient(
+                    to left,
+                    transparent,
+                    var(--dorado)
+                );
+        }
+
+
+        /* =====================================================
+           INTRODUCCIÓN
+        ===================================================== */
+
+        .prologue {
+
+            max-width: 760px;
+
+            margin: 0 auto 85px;
+
+            text-align: center;
+
+            font-size: 20px;
+
+            line-height: 1.75;
+
+            font-style: italic;
+
+            color: var(--tinta-suave);
+        }
+
+
+        .prologue::first-letter {
+
+            font-size: 52px;
+
+            color: var(--rojo);
+        }
+
+
+        /* =====================================================
+           ERA
+        ===================================================== */
+
+        .era-header {
+
+            position: relative;
+
+            margin-bottom: 70px;
+
+            text-align: center;
+
+            padding: 38px 25px;
+
+            border-top:
+                1px solid var(--dorado);
+
+            border-bottom:
+                1px solid var(--dorado);
+        }
+
+
+        .era-number {
+
+            font-family:
+                "UnifrakturCook",
+                serif;
+
+            font-size: 25px;
+
+            color: var(--rojo);
+        }
+
+
+        .era-header h2 {
+
+            margin: 5px 0 8px;
+
+            font-size: clamp(40px, 6vw, 65px);
+
+            font-weight: 500;
+
+            color: var(--rojo);
+
+            letter-spacing: 2px;
+        }
+
+
+        .era-description {
+
+            font-size: 18px;
+
+            font-style: italic;
+
+            color: var(--tinta-suave);
+        }
+
+
+        /* =====================================================
+           LÍNEA HISTÓRICA
+        ===================================================== */
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            bottom: 0;
+
+            left: 50%;
+
+            width: 1px;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    var(--dorado) 5%,
+                    var(--dorado) 95%,
+                    transparent
+                );
+
+            transform: translateX(-50%);
+        }
+
+
+        /* =====================================================
+           CAPÍTULOS
+        ===================================================== */
+
+        .chapter {
+
+            position: relative;
+
+            width: 50%;
+
+            padding: 0 45px 75px;
+        }
+
+
+        .chapter:nth-child(odd) {
+
+            left: 0;
+
+            text-align: right;
+        }
+
+
+        .chapter:nth-child(even) {
+
+            left: 50%;
+
+            text-align: left;
+        }
+
+
+        .chapter-dot {
+
+            position: absolute;
+
+            top: 18px;
+
+            width: 15px;
+
+            height: 15px;
+
+            border-radius: 50%;
+
+            background: var(--pergamino-claro);
+
+            border: 3px solid var(--dorado);
+
+            box-shadow:
+                0 0 0 5px rgba(178,138,69,0.08);
+
+            z-index: 4;
+        }
+
+
+        .chapter:nth-child(odd) .chapter-dot {
+
+            right: -8px;
+        }
+
+
+        .chapter:nth-child(even) .chapter-dot {
+
+            left: -8px;
+        }
+
+
+        .chapter-number {
+
+            font-family:
+                "UnifrakturCook",
+                serif;
+
+            font-size: 35px;
+
+            color: var(--rojo);
+
+            opacity: 0.85;
+        }
+
+
+        .chapter h3 {
+
+            margin: 4px 0 17px;
+
+            font-size: 28px;
+
+            line-height: 1.05;
+
+            font-weight: 600;
+
+            color: var(--rojo);
+        }
+
+
+        .chapter-text {
+
+            font-size: 17px;
+
+            line-height: 1.75;
+
+            color: var(--tinta);
+        }
+
+
+        .chapter-text p {
+
+            margin: 0 0 16px;
+        }
+
+
+        /* =====================================================
+           LETRA CAPITULAR
+        ===================================================== */
+
+        .chapter-text p:first-child::first-letter {
+
+            float: left;
+
+            font-size: 65px;
+
+            line-height: 0.7;
+
+            padding-right: 7px;
+
+            padding-top: 9px;
+
+            color: var(--rojo);
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           FRASES DESTACADAS
+        ===================================================== */
+
+        .quote {
+
+            position: relative;
+
+            margin: 28px 0;
+
+            padding: 20px 25px;
+
+            font-size: 20px;
+
+            font-style: italic;
+
+            color: var(--rojo);
+
+            border-top:
+                1px solid var(--dorado);
+
+            border-bottom:
+                1px solid var(--dorado);
+        }
+
+
+        .quote::before {
+
+            content: "“";
+
+            position: absolute;
+
+            top: -10px;
+
+            left: -3px;
+
+            font-size: 50px;
+
+            color: var(--dorado);
+
+            opacity: 0.6;
+        }
+
+
+        /* =====================================================
+           MOMENTOS ESPECIALES
+        ===================================================== */
+
+        .historical-highlight {
+
+            max-width: 720px;
+
+            margin: 30px auto;
+
+            padding: 28px 35px;
+
+            text-align: center;
+
+            background:
+                rgba(223,201,156,0.25);
+
+            border:
+                1px solid rgba(178,138,69,0.45);
+
+            box-shadow:
+                inset 0 0 35px rgba(178,138,69,0.05);
+        }
+
+
+        .highlight-title {
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: var(--rojo);
+        }
+
+
+        .highlight-main {
+
+            margin-top: 10px;
+
+            font-size: 27px;
+
+            font-weight: 600;
+
+            color: var(--tinta);
+        }
+
+
+        /* =====================================================
+           DOCUMENTO REAL
+        ===================================================== */
+
+        .royal-document {
+
+            position: relative;
+
+            max-width: 780px;
+
+            margin: 20px auto 80px;
+
+            padding: 45px;
+
+            border:
+                1px solid var(--dorado);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,248,231,0.7),
+                    rgba(231,210,164,0.3)
+                );
+
+            box-shadow:
+                0 15px 35px rgba(72,43,34,0.08);
+        }
+
+
+        .royal-document::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 18px;
+
+            color: var(--dorado);
+        }
+
+
+        .royal-document::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            bottom: 15px;
+
+            right: 18px;
+
+            color: var(--dorado);
+        }
+
+
+        .document-heading {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .document-heading small {
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            color: var(--rojo);
+        }
+
+
+        .document-heading h3 {
+
+            margin: 8px 0;
+
+            font-size: 34px;
+
+            font-weight: 600;
+
+            color: var(--rojo);
+        }
+
+
+        .document-intro {
+
+            text-align: center;
+
+            font-size: 16px;
+
+            font-style: italic;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+
+        .record {
+
+            display: grid;
+
+            grid-template-columns: 190px 1fr;
+
+            gap: 20px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px dotted rgba(125,57,66,0.35);
+
+            font-size: 16px;
+        }
+
+
+        .record:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .record-date {
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            color: var(--rojo);
+        }
+
+
+        .record-description {
+
+            color: var(--tinta);
+        }
+
+
+        /* =====================================================
+           FIN DE ERA
+        ===================================================== */
+
+        .era-ending {
+
+            position: relative;
+
+            max-width: 850px;
+
+            margin: 80px auto 0;
+
+            padding: 50px 40px;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--dorado);
+
+            border-bottom:
+                1px solid var(--dorado);
+        }
+
+
+        .ending-title {
+
+            font-family:
+                "UnifrakturCook",
+                serif;
+
+            font-size: 28px;
+
+            color: var(--rojo);
+        }
+
+
+        .era-ending h3 {
+
+            margin: 12px 0 25px;
+
+            font-size: 38px;
+
+            font-weight: 500;
+
+            color: var(--rojo);
+        }
+
+
+        .era-ending p {
+
+            max-width: 650px;
+
+            margin: 0 auto 20px;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        .ending-final {
+
+            margin-top: 35px !important;
+
+            font-size: 27px !important;
+
+            font-style: italic;
+
+            color: var(--rojo);
+
+            font-weight: 500;
+        }
+
+
+        /* =====================================================
+           SIGUIENTE ERA
+        ===================================================== */
+
+        .next-era {
+
+            margin-top: 70px;
+
+            text-align: center;
+        }
+
+
+        .next-label {
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            color: var(--tinta-suave);
+
+            text-transform: uppercase;
+        }
+
+
+        .next-era h3 {
+
+            margin: 10px 0;
+
+            font-size: 30px;
+
+            font-weight: 600;
+
+            color: var(--rojo);
+        }
+
+
+        .next-era p {
+
+            margin: 0;
+
+            font-style: italic;
+
+            font-size: 16px;
+
+            color: var(--tinta-suave);
+        }
+
+
+        /* =====================================================
+           SELLO
+        ===================================================== */
+
+        .seal {
+
+            width: 105px;
+
+            height: 105px;
+
+            margin: 45px auto 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            border:
+
+                2px solid var(--rojo);
+
+            border-radius: 50%;
+
+            color: var(--rojo);
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            transform: rotate(-8deg);
+
+            position: relative;
+        }
+
+
+        .seal::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 9px;
+
+            font-size: 12px;
+        }
+
+
+        .seal::after {
+
+            content: "ARCHIVO REAL";
+
+            position: absolute;
+
+            bottom: 10px;
+
+            font-size: 6px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            width: min(1120px, 92%);
+
+            margin: 0 auto 40px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            color: var(--rojo);
+
+            font-family: "Quicksand", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           ANIMACIONES
+        ===================================================== */
+
+        .chapter {
+
+            animation:
+                appear 0.8s ease both;
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(18px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .book {
+
+                width: 94%;
+
+                padding: 55px 35px 70px;
+            }
+
+
+            .book::before {
+
+                inset: 12px;
+            }
+
+
+            .book::after {
+
+                inset: 18px;
+            }
+
+
+            .timeline::before {
+
+                left: 12px;
+            }
+
+
+            .chapter {
+
+                width: 100%;
+
+                left: 0 !important;
+
+                padding:
+
+                    0 0 60px 40px;
+
+                text-align: left !important;
+            }
+
+
+            .chapter:nth-child(odd) .chapter-dot,
+            .chapter:nth-child(even) .chapter-dot {
+
+                left: 5px;
+
+                right: auto;
+            }
+
+
+            .chapter h3 {
+
+                font-size: 26px;
+            }
+
+
+            .chapter-text {
+
+                font-size: 16px;
+            }
+
+
+            .record {
+
+                grid-template-columns: 1fr;
+
+                gap: 5px;
+            }
+
+
+            .royal-document {
+
+                padding: 30px 22px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .top-navigation {
+
+                padding: 11px 15px;
+
+                font-size: 9px;
+            }
+
+
+            .nav-title span {
+
+                display: none;
+            }
+
+
+            .book {
+
+                margin-top: 20px;
+
+                padding:
+                    45px 25px 60px;
+            }
+
+
+            .archive-header {
+
+                margin-bottom: 55px;
+            }
+
+
+            .archive-header h1 {
+
+                font-size: 47px;
+            }
+
+
+            .archive-subtitle {
+
+                font-size: 15px;
+            }
+
+
+            .prologue {
+
+                font-size: 17px;
+
+                margin-bottom: 55px;
+            }
+
+
+            .era-header {
+
+                padding: 28px 10px;
+            }
+
+
+            .era-header h2 {
+
+                font-size: 40px;
+            }
+
+
+            .era-description {
+
+                font-size: 15px;
+            }
+
+
+            .chapter-number {
+
+                font-size: 28px;
+            }
+
+
+            .chapter h3 {
+
+                font-size: 24px;
+            }
+
+
+            .historical-highlight {
+
+                padding: 23px 18px;
+            }
+
+
+            .highlight-main {
+
+                font-size: 23px;
+            }
+
+
+            .era-ending {
+
+                padding:
+                    40px 15px;
+            }
+
+
+            .era-ending h3 {
+
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVEGACIÓN
+    ===================================================== -->
+
+    <nav class="top-navigation">
+
+        <a
+            href="../index.html"
+            class="nav-title"
+        >
+
+            <span class="nav-crown">
+                👑
+            </span>
+
+            <span>
+                REINO DE BOLLONIA · ARCHIVO REAL
+            </span>
+
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="nav-back"
+        >
+
+            ← Volver al Reino
+
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         LIBRO
+    ===================================================== -->
+
+    <main class="book">
+
+
+        <!-- =================================================
+             CABECERA
+        ================================================= -->
+
+        <header class="archive-header">
+
+            <div class="archive-small">
+                Archivo Histórico de la Corona
+            </div>
+
+
+            <h1>
+                Historia de nuestra Corona
+            </h1>
+
+
+            <div class="archive-subtitle">
+
+                Crónicas de amor, destino y vacile
+
+            </div>
+
+
+            <div class="ornament">
+                ✦
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PRÓLOGO
+        ================================================= -->
+
+        <div class="prologue">
+
+            Antes de que existiera un Reino, antes de que
+            hubiera una Corona y mucho antes de que dos
+            personas pudieran ser llamadas Sus Majestades,
+            ya había comenzado una historia que ninguno de
+            sus protagonistas sabía todavía que terminaría
+            convirtiéndose en la más importante de todas.
+
+        </div>
+
+
+        <!-- =================================================
+             ERA I
+        ================================================= -->
+
+        <section id="era-1">
+
+
+            <header class="era-header">
+
+                <div class="era-number">
+                    ERA I
+                </div>
+
+                <h2>
+                    LOS ORÍGENES
+                </h2>
+
+                <div class="era-description">
+
+                    Donde todo comenzó, mucho antes de que
+                    existiera un reino.
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 LÍNEA TEMPORAL
+            ============================================== -->
+
+            <div class="timeline">
+
+
+                <!-- =========================================
+                     CAPÍTULO I
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        I
+                    </div>
+
+
+                    <h3>
+                        Antes de Bollonia
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Antes de que existiera el Reino de
+                            Bollonia, antes de la Corona, antes
+                            de Rosabun y antes de que dos
+                            personas pudieran ser llamadas
+                            Sus Majestades, simplemente
+                            existían dos estudiantes que
+                            compartían una misma carrera
+                            universitaria.
+                        </p>
+
+                        <p>
+                            Ella ya conocía los pasillos,
+                            las aulas y los pequeños rituales
+                            de aquella vida universitaria.
+                            Cursaba segundo curso.
+                        </p>
+
+                        <p>
+                            Él acababa de llegar y todavía
+                            estaba descubriendo aquel nuevo
+                            mundo, sin imaginar que entre
+                            todas las personas que podía
+                            encontrar allí habría una que
+                            terminaría ocupando un lugar
+                            completamente distinto.
+                        </p>
+
+                        <p>
+                            Todavía no había reino que gobernar,
+                            ni Constitución que escribir,
+                            ni historia que recordar.
+                        </p>
+
+                        <p>
+                            Pero el destino ya había decidido
+                            ponerlos en el mismo lugar.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO II
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        II
+                    </div>
+
+
+                    <h3>
+                        La charla
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Era diciembre.
+                        </p>
+
+                        <p>
+                            Una de esas oportunidades que
+                            parecen pequeñas cuando suceden
+                            y que solo adquieren verdadera
+                            importancia cuando se contemplan
+                            desde el futuro.
+                        </p>
+
+                        <p>
+                            La universidad organizaba una
+                            jornada destinada a futuros
+                            estudiantes llegados desde
+                            Bachillerato para conocer la
+                            carrera. Participar permitía,
+                            además, obtener algunos créditos.
+                        </p>
+
+                        <p>
+                            La misión parecía sencilla:
+                            asistir, contar cómo era la
+                            universidad y ayudar a quienes
+                            estaban a punto de comenzar
+                            un camino parecido.
+                        </p>
+
+                        <p>
+                            Juan llevaba ya un buen rato
+                            esperando junto al resto de
+                            estudiantes.
+                        </p>
+
+                        <p>
+                            Entonces aparecieron ellas.
+                        </p>
+
+                        <p>
+                            Almudena y sus amigas se acercaron
+                            para preguntar si aquel grupo
+                            también estaba esperando la charla.
+                        </p>
+
+                        <p>
+                            Una pregunta completamente normal.
+                            Un encuentro aparentemente
+                            insignificante.
+                        </p>
+
+                        <p>
+                            Y, sin embargo, los archivos
+                            históricos de Bollonia lo
+                            conservarían para siempre como
+                            el primer encuentro entre quienes,
+                            sin saberlo todavía, acabarían
+                            formando la Corona.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO III
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        III
+                    </div>
+
+
+                    <h3>
+                        La futura Reina
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Durante aquella jornada ocurrió
+                            algo que permanecería en la memoria
+                            de Juan.
+                        </p>
+
+                        <p>
+                            Mientras la mayoría permanecía
+                            observando y participando de manera
+                            más discreta, Almudena tomó la
+                            iniciativa.
+                        </p>
+
+                        <p>
+                            Hablaba, respondía, explicaba y se
+                            desenvolvía ante aquellos futuros
+                            estudiantes con una naturalidad y
+                            una personalidad que destacaban
+                            especialmente.
+                        </p>
+
+                        <p>
+                            Había algo en aquella manera de
+                            desenvolverse que llamaba la
+                            atención.
+                        </p>
+
+                        <p>
+                            Todavía no lo sabía.
+                        </p>
+
+                        <p>
+                            Ninguno de los dos podía saberlo.
+                        </p>
+
+                        <p>
+                            Pero aquel día Juan acababa de
+                            conocer a quien, muchos capítulos
+                            después, sería reconocida como:
+                        </p>
+
+
+                        <div class="quote">
+
+                            Su Majestad Real,
+                            la Reina Almudena I de Bollonia.
+
+                        </div>
+
+
+                        <p>
+                            Aquella tarde no existía ninguna
+                            corona.
+                        </p>
+
+                        <p>
+                            Pero quizá ya se estaba empezando
+                            a formar.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO IV
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        IV
+                    </div>
+
+
+                    <h3>
+                        Las primeras provocaciones diplomáticas
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Terminada la charla, aquel primer
+                            encuentro podría haber quedado
+                            simplemente como una anécdota más
+                            de la universidad.
+                        </p>
+
+                        <p>
+                            Pero algo había cambiado.
+                        </p>
+
+                        <p>
+                            Almudena parecía algo más nerviosa
+                            y no mostraba precisamente una
+                            voluntad extraordinaria de prolongar
+                            aquella conversación.
+                        </p>
+
+                        <p>
+                            Juan, sin embargo, decidió dar
+                            un pequeño paso.
+                        </p>
+
+                        <p>
+                            Era martes.
+                        </p>
+
+                        <p>
+                            Y llegó una propuesta sencilla:
+                        </p>
+
+
+                        <div class="quote">
+
+                            ¿Salimos el jueves de fiesta?
+
+                        </div>
+
+
+                        <p>
+                            La respuesta no fue exactamente
+                            una aceptación formal.
+                        </p>
+
+                        <p>
+                            Fue, más bien, una primera
+                            demostración de carácter.
+                        </p>
+
+
+                        <div class="quote">
+
+                            ¿Para verte a ti?
+
+                        </div>
+
+
+                        <p>
+                            Aquella frase, aparentemente
+                            inocente, acabaría convirtiéndose
+                            en uno de los primeros documentos
+                            de la particular diplomacia entre
+                            los futuros monarcas.
+                        </p>
+
+                        <p>
+                            Había nacido una tradición que
+                            con el tiempo se convertiría en
+                            uno de los rasgos culturales más
+                            reconocibles de Bollonia:
+                        </p>
+
+
+                        <div class="historical-highlight">
+
+                            <div class="highlight-title">
+                                Tradición nacional
+                            </div>
+
+                            <div class="highlight-main">
+                                El arte del vacile
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO V
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        V
+                    </div>
+
+
+                    <h3>
+                        La incorporación al grupo
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Después de las clases, Juan
+                            regresó a su residencia pensando
+                            probablemente que aquel encuentro
+                            había sido, como tantos otros,
+                            una curiosa historia de universidad.
+                        </p>
+
+                        <p>
+                            Pero mientras él seguía con su
+                            vida, los acontecimientos avanzaban
+                            silenciosamente.
+                        </p>
+
+                        <p>
+                            Se había formado un grupo para
+                            organizar la salida del jueves.
+                        </p>
+
+                        <p>
+                            Solo existía un pequeño inconveniente:
+                            Juan todavía no formaba parte de él.
+                        </p>
+
+                        <p>
+                            Así que fueron a buscarlo.
+                        </p>
+
+                        <p>
+                            Y de esta manera, sin ceremonias,
+                            sin discursos y sin que nadie
+                            pudiera imaginar lo que estaba
+                            empezando, Juan pasó a formar parte
+                            de aquel primer espacio compartido
+                            con Almudena y sus amigas.
+                        </p>
+
+                        <p>
+                            El vacile continuó.
+                        </p>
+
+                        <p>
+                            La conversación quedó aparentemente
+                            aparcada.
+                        </p>
+
+                        <p>
+                            Y el jueves comenzó a adquirir una
+                            importancia que ninguno de los dos
+                            podía imaginar todavía.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO VI
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        VI
+                    </div>
+
+
+                    <h3>
+                        La noche de Andén
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Llegó el jueves.
+                        </p>
+
+                        <p>
+                            Después de varios días de
+                            conversaciones, bromas y pequeñas
+                            provocaciones, había llegado el
+                            momento de descubrir si aquella
+                            invitación acabaría convirtiéndose
+                            realmente en una noche compartida.
+                        </p>
+
+                        <p>
+                            Juan salió con sus amigos por
+                            Málaga, con destino a Andén.
+                        </p>
+
+                        <p>
+                            Pero existía una incógnita:
+                            nadie sabía con certeza si
+                            Almudena aparecería.
+                        </p>
+
+                        <p>
+                            Durante buena parte de la noche,
+                            el destino mantuvo la respuesta
+                            en secreto.
+                        </p>
+
+                        <p>
+                            Hasta que finalmente llegó la
+                            noticia.
+                        </p>
+
+                        <p>
+                            Almudena estaba en el centro de
+                            Málaga con una amiga.
+                        </p>
+
+                        <div class="quote">
+
+                            ¿Cuándo vais?
+
+                        </div>
+
+                        <p>
+                            La pregunta era sencilla.
+                        </p>
+
+                        <p>
+                            Pero aquella noche estaba a punto
+                            de convertirse en el primer gran
+                            encuentro de los futuros monarcas
+                            fuera de las aulas.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO VII
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        VII
+                    </div>
+
+
+                    <h3>
+                        La operación Andén
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Aquella noche Málaga estaba
+                            completamente tomada por la fiesta.
+                        </p>
+
+                        <p>
+                            La entrada de Andén estaba
+                            abarrotada y la cola se extendía
+                            mucho más de lo que cualquiera
+                            habría deseado.
+                        </p>
+
+                        <p>
+                            Pero había un pequeño problema:
+                            Juan no estaba dispuesto a permitir
+                            que una cola pudiera interponerse
+                            entre él y aquella noche.
+                        </p>
+
+                        <p>
+                            Localizó a Almudena y a su amiga.
+                        </p>
+
+                        <p>
+                            Y entonces comenzó una operación
+                            diplomática de dudosa legalidad,
+                            pero de incuestionable eficacia.
+                        </p>
+
+
+                        <div class="historical-highlight">
+
+                            <div class="highlight-title">
+                                Operación clasificada
+                            </div>
+
+                            <div class="highlight-main">
+                                Entrar sin esperar
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            La misión fue un éxito.
+                        </p>
+
+                        <p>
+                            Y una vez dentro, comenzó también
+                            la segunda fase: conseguir que el
+                            resto de la expedición pudiera
+                            incorporarse.
+                        </p>
+
+                        <p>
+                            Poco después, ambos grupos terminaron
+                            juntos dentro de la discoteca.
+                        </p>
+
+                        <p>
+                            La noche acababa de comenzar.
+                        </p>
+
+                        <p>
+                            Y todavía quedaba por escribir
+                            uno de los capítulos más importantes
+                            de aquella primera era.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO VIII
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        VIII
+                    </div>
+
+
+                    <h3>
+                        El primer momento a solas
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Entre la música, las luces y el
+                            ruido de una noche llena de gente,
+                            llegó un momento inesperado.
+                        </p>
+
+                        <p>
+                            Por primera vez desde que se habían
+                            conocido, ambos pudieron quedarse
+                            solos durante un rato.
+                        </p>
+
+                        <p>
+                            Ya no estaban rodeados por el
+                            grupo.
+                        </p>
+
+                        <p>
+                            Ya no era una conversación de
+                            universidad.
+                        </p>
+
+                        <p>
+                            Tampoco era simplemente otro
+                            intercambio de provocaciones.
+                        </p>
+
+                        <p>
+                            Había algo diferente.
+                        </p>
+
+                        <p>
+                            Algo que ninguno de los dos
+                            necesitaba explicar todavía.
+                        </p>
+
+                        <p>
+                            Poco después, Almudena salió de
+                            la discoteca mientras Juan permaneció
+                            dentro.
+                        </p>
+
+                        <p>
+                            Y entonces apareció uno de los
+                            grandes enemigos de aquella noche:
+                            la cobertura.
+                        </p>
+
+                        <p>
+                            Durante unos minutos, el mundo
+                            exterior parecía haber desaparecido.
+                            Los mensajes no llegaban.
+                            Las llamadas no funcionaban.
+                        </p>
+
+                        <p>
+                            Cuando Juan finalmente salió,
+                            se encontró con una Almudena
+                            ligeramente picada por la situación.
+                        </p>
+
+                        <p>
+                            Sin embargo, aquel pequeño
+                            desencuentro no sería recordado
+                            como un problema.
+                        </p>
+
+                        <p>
+                            Sería recordado como el momento
+                            que precedió a uno de los acontecimientos
+                            más importantes de toda la Era I.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO IX
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        IX
+                    </div>
+
+
+                    <h3>
+                        El primer beso
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Los dos se alejaron del grupo.
+                        </p>
+
+                        <p>
+                            Caminaron juntos.
+                        </p>
+
+                        <p>
+                            Y entonces ocurrió.
+                        </p>
+
+                        <p>
+                            Sin discursos.
+                            Sin ceremonias.
+                            Sin testigos oficiales.
+                        </p>
+
+                        <p>
+                            Simplemente ocurrió.
+                        </p>
+
+
+                        <div class="historical-highlight">
+
+                            <div class="highlight-title">
+                                Acontecimiento fundacional
+                            </div>
+
+                            <div class="highlight-main">
+                                El Primer Beso
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            Aquel instante sería conservado
+                            para siempre en los archivos
+                            históricos de Bollonia como:
+                        </p>
+
+
+                        <div class="quote">
+
+                            El Primer Acercamiento de la Corona.
+
+                        </div>
+
+
+                        <p>
+                            Todavía no existía el Reino.
+                        </p>
+
+                        <p>
+                            No había Constitución.
+                        </p>
+
+                        <p>
+                            No había bandera.
+                        </p>
+
+                        <p>
+                            Ni siquiera existía todavía
+                            el nombre de Bollonia.
+                        </p>
+
+                        <p>
+                            Pero aquella noche había nacido
+                            algo mucho más importante:
+                        </p>
+
+
+                        <div class="quote">
+
+                            La historia que algún día tendría
+                            un reino.
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO X
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        X
+                    </div>
+
+
+                    <h3>
+                        El comienzo de la correspondencia real
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            La noche terminó, pero la historia
+                            apenas comenzaba a tomar forma.
+                        </p>
+
+                        <p>
+                            Entre aquella noche y los días
+                            posteriores, algo cambió.
+                        </p>
+
+                        <p>
+                            Las conversaciones dejaron de ser
+                            una prolongación casual de aquella
+                            noche y comenzaron a convertirse
+                            en una constante.
+                        </p>
+
+                        <p>
+                            Había interés.
+                        </p>
+
+                        <p>
+                            Había curiosidad.
+                        </p>
+
+                        <p>
+                            Y, sobre todo, había ganas de
+                            seguir descubriendo a la otra
+                            persona.
+                        </p>
+
+                        <p>
+                            Pero entonces apareció una pequeña
+                            dificultad.
+                        </p>
+
+                        <p>
+                            Al día siguiente, Juan debía
+                            abandonar Málaga para pasar las
+                            vacaciones con su familia.
+                        </p>
+
+                        <p>
+                            La distancia apareció justo cuando
+                            las conversaciones comenzaban a
+                            adquirir una importancia inesperada.
+                        </p>
+
+                        <p>
+                            Sin embargo, la distancia no hizo
+                            que la historia se detuviera.
+                        </p>
+
+                        <p>
+                            Hizo exactamente lo contrario.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =========================================
+                     CAPÍTULO XI
+                ========================================== -->
+
+                <article class="chapter">
+
+                    <div class="chapter-dot"></div>
+
+
+                    <div class="chapter-number">
+                        XI
+                    </div>
+
+
+                    <h3>
+                        La primera Navidad
+                    </h3>
+
+
+                    <div class="chapter-text">
+
+                        <p>
+                            Llegaron las vacaciones.
+                        </p>
+
+                        <p>
+                            Málaga quedó atrás durante unos
+                            días y la distancia separó
+                            físicamente a los dos protagonistas.
+                        </p>
+
+                        <p>
+                            Pero había algo que la distancia
+                            no consiguió separar.
+                        </p>
+
+                        <p>
+                            Las conversaciones continuaron.
+                        </p>
+
+                        <p>
+                            Día tras día, la comunicación se
+                            convirtió poco a poco en una parte
+                            natural de aquellas vacaciones.
+                        </p>
+
+                        <p>
+                            Lo que había comenzado como
+                            curiosidad empezaba a transformarse
+                            en interés.
+                        </p>
+
+                        <p>
+                            El interés se convirtió en ganas
+                            de hablar.
+                        </p>
+
+                        <p>
+                            Y las ganas de hablar terminaron
+                            convirtiéndose en esperar cada nuevo
+                            momento compartido, incluso desde
+                            lejos.
+                        </p>
+
+                        <p>
+                            Entre aquella noche de diciembre
+                            y el regreso a Málaga el 7 de enero,
+                            la historia había avanzado más de
+                            lo que cualquiera habría imaginado
+                            al principio.
+                        </p>
+
+                        <p>
+                            Málaga estaba lejos.
+                        </p>
+
+                        <p>
+                            Pero la otra persona ya no lo
+                            estaba tanto.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PRIMER TRATADO
+        ================================================= -->
+
+        <section class="royal-document">
+
+
+            <div class="document-heading">
+
+                <small>
+                    Archivo Fundacional de la Corona
+                </small>
+
+                <h3>
+                    El Primer Tratado de la Corona
+                </h3>
+
+            </div>
+
+
+            <p class="document-intro">
+
+                Los cronistas bolloneses consideran este
+                período como el momento en que se estableció
+                el primer vínculo verdaderamente significativo
+                entre las futuras majestades.
+
+            </p>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    Diciembre de 2024
+                </div>
+
+                <div class="record-description">
+                    Primer encuentro universitario.
+                </div>
+
+            </div>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    Martes
+                </div>
+
+                <div class="record-description">
+                    Primera invitación a salir.
+                </div>
+
+            </div>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    Jueves
+                </div>
+
+                <div class="record-description">
+                    Primer encuentro nocturno.
+                </div>
+
+            </div>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    Noche del 19 al 20 de diciembre
+                </div>
+
+                <div class="record-description">
+                    Primer beso y comienzo de una nueva
+                    etapa entre ambos.
+                </div>
+
+            </div>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    19 diciembre – 7 enero
+                </div>
+
+                <div class="record-description">
+                    Primera etapa de comunicación constante
+                    durante la separación navideña.
+                </div>
+
+            </div>
+
+
+            <div class="record">
+
+                <div class="record-date">
+                    7 de enero
+                </div>
+
+                <div class="record-description">
+                    Regreso a Málaga y comienzo de un nuevo
+                    capítulo.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             FIN DE ERA
+        ================================================= -->
+
+        <section class="era-ending">
+
+
+            <div class="ending-title">
+                Fin de la Era I
+            </div>
+
+
+            <h3>
+                Los orígenes
+            </h3>
+
+
+            <p>
+
+                Durante aquellas semanas todavía no existía
+                oficialmente el Reino de Bollonia.
+
+            </p>
+
+
+            <p>
+
+                Sin embargo, los acontecimientos que algún
+                día darían lugar a su fundación ya estaban
+                en marcha.
+
+            </p>
+
+
+            <p>
+
+                Dos estudiantes se habían conocido.
+                Habían comenzado a provocarse.
+                Habían compartido una noche.
+                Se habían besado.
+
+            </p>
+
+
+            <p>
+
+                Y habían descubierto que querían seguir
+                formando parte de la vida del otro incluso
+                cuando la distancia intentaba ponerla
+                de por medio.
+
+            </p>
+
+
+            <p>
+
+                El Reino todavía no había nacido.
+
+            </p>
+
+
+            <p>
+
+                Pero sus futuros monarcas ya habían
+                comenzado a encontrarse.
+
+            </p>
+
+
+            <p class="ending-final">
+
+                Y entonces llegó enero.
+
+            </p>
+
+
+            <div class="seal">
+
+                REINO<br>
+                DE<br>
+                BOLLONIA
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             SIGUIENTE ERA
+        ================================================= -->
+
+        <section class="next-era">
+
+            <div class="next-label">
+                Próximo capítulo de la Historia
+            </div>
+
+
+            <h3>
+                Era II — El nacimiento de la Corona
+            </h3>
+
+
+            <p>
+                Continuará...
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        ✦ · ARCHIVO REAL DEL REINO DE BOLLONIA · ✦
+
+    </footer>
+
+
+</body>
+
+</html>
