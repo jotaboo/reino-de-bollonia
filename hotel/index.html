@@ -1,1 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Hotel de LaMêr | Boutique Hotel & Residence</title>
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --azul: #293D45;
+            --azul-claro: #50656D;
+
+            --champagne: #C8B195;
+            --champagne-claro: #E0D3C3;
+
+            --marfil: #F7F4EE;
+            --blanco: #FFFDF9;
+
+            --negro: #1D2B31;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--marfil);
+            color: var(--azul);
+            font-family: "Montserrat", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 25px 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            z-index: 100;
+
+            color: white;
+
+            transition: all .4s ease;
+        }
+
+
+        .navbar.scrolled {
+
+            background: rgba(247,244,238,.95);
+
+            backdrop-filter: blur(12px);
+
+            color: var(--azul);
+
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            box-shadow: 0 5px 30px rgba(0,0,0,.08);
+        }
+
+
+        /* LOGO PEQUEÑO */
+
+        .nav-logo {
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .nav-logo img {
+
+            width: 45px;
+            height: 45px;
+
+            object-fit: contain;
+
+            transition: .4s ease;
+        }
+
+        .navbar:not(.scrolled) .nav-logo img {
+
+            filter: brightness(0) invert(1);
+        }
+
+
+        .nav-name {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            letter-spacing: .08em;
+
+            font-weight: 500;
+        }
+
+
+        /* MENU */
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 40px;
+
+            list-style: none;
+        }
+
+
+        .nav-menu a {
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .2em;
+
+            transition: .3s ease;
+        }
+
+
+        .nav-menu a:hover {
+
+            color: var(--champagne);
+        }
+
+
+        .nav-reserve {
+
+            border: 1px solid currentColor;
+
+            padding: 13px 22px;
+
+            transition: .3s ease;
+        }
+
+
+        .nav-reserve:hover {
+
+            background: var(--champagne);
+
+            border-color: var(--champagne);
+
+            color: var(--azul);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 25%,
+                    #687B82 0%,
+                    #435860 35%,
+                    #293D45 75%,
+                    #1D2B31 100%
+                );
+
+        }
+
+
+        /* LUZ CENTRAL */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 800px;
+            height: 800px;
+
+            border-radius: 50%;
+
+            background: radial-gradient(
+                circle,
+                rgba(224,211,195,.18),
+                transparent 65%
+            );
+
+            top: -350px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+
+        /* TEXTURA */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: .08;
+
+            background-image:
+
+                linear-gradient(
+                    120deg,
+                    transparent 45%,
+                    rgba(255,255,255,.3) 50%,
+                    transparent 55%
+                );
+
+            background-size: 250px 250px;
+        }
+
+
+        /* =====================================================
+           CONTENIDO HERO
+        ===================================================== */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            text-align: center;
+
+            color: white;
+
+            padding-top: 50px;
+        }
+
+
+        .hero-location {
+
+            font-size: 10px;
+
+            letter-spacing: .45em;
+
+            text-transform: uppercase;
+
+            color: var(--champagne-claro);
+
+            margin-bottom: 35px;
+        }
+
+
+        /* LOGO GRANDE */
+
+        .hero-logo {
+
+            width: min(390px, 72vw);
+
+            margin: 0 auto 28px;
+
+            display: block;
+
+            /*
+               El logo original tiene fondo transparente,
+               así que lo mostramos directamente.
+            */
+
+            filter:
+                drop-shadow(
+                    0 20px 35px rgba(0,0,0,.22)
+                );
+        }
+
+
+        /* LINEA */
+
+        .ornament {
+
+            width: 130px;
+
+            height: 1px;
+
+            background: var(--champagne);
+
+            margin: 0 auto 25px;
+
+            position: relative;
+        }
+
+
+        .ornament::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -55%);
+
+            padding: 0 15px;
+
+            background: transparent;
+
+            color: var(--champagne);
+
+            font-size: 11px;
+        }
+
+
+        /* CLAIM */
+
+        .hero-title {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(25px, 4vw, 39px);
+
+            font-weight: 400;
+
+            font-style: italic;
+
+            letter-spacing: .02em;
+
+            margin-bottom: 42px;
+        }
+
+
+        /* BOTONES */
+
+        .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .button {
+
+            min-width: 190px;
+
+            padding: 16px 25px;
+
+            border: 1px solid var(--champagne);
+
+            font-size: 10px;
+
+            letter-spacing: .2em;
+
+            text-transform: uppercase;
+
+            transition: all .3s ease;
+        }
+
+
+        .button-primary {
+
+            background: var(--champagne);
+
+            color: var(--azul);
+        }
+
+
+        .button-primary:hover {
+
+            background: white;
+
+            border-color: white;
+        }
+
+
+        .button-secondary {
+
+            color: white;
+        }
+
+
+        .button-secondary:hover {
+
+            background: white;
+
+            color: var(--azul);
+
+            border-color: white;
+        }
+
+
+        /* =====================================================
+           DECORACIÓN MARINA
+        ===================================================== */
+
+        .waves {
+
+            position: absolute;
+
+            bottom: -1px;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 150px;
+
+            z-index: 3;
+
+            overflow: hidden;
+        }
+
+
+        .wave {
+
+            position: absolute;
+
+            bottom: -100px;
+
+            left: -5%;
+
+            width: 110%;
+
+            height: 190px;
+
+            border-radius: 50% 50% 0 0;
+
+            background: var(--marfil);
+        }
+
+
+        .wave:nth-child(2) {
+
+            bottom: -125px;
+
+            background: rgba(247,244,238,.35);
+        }
+
+
+        /* =====================================================
+           SCROLL
+        ===================================================== */
+
+        .scroll {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 10;
+
+            color: white;
+
+            font-size: 9px;
+
+            letter-spacing: .3em;
+
+            text-transform: uppercase;
+
+            opacity: .75;
+        }
+
+
+        .scroll-line {
+
+            width: 1px;
+
+            height: 35px;
+
+            background: var(--champagne);
+
+            margin: 10px auto 0;
+        }
+
+
+        /* =====================================================
+           PEQUEÑA INFORMACIÓN INFERIOR
+        ===================================================== */
+
+        .hero-info {
+
+            position: absolute;
+
+            bottom: 45px;
+
+            left: 5%;
+
+            z-index: 10;
+
+            color: rgba(255,255,255,.65);
+
+            font-size: 9px;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+        }
+
+
+        .hero-info-right {
+
+            position: absolute;
+
+            bottom: 45px;
+
+            right: 5%;
+
+            z-index: 10;
+
+            color: rgba(255,255,255,.65);
+
+            font-size: 9px;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            .nav-menu {
+
+                display: none;
+            }
+
+            .nav-name {
+
+                font-size: 24px;
+            }
+
+            .hero-content {
+
+                padding-top: 40px;
+            }
+
+            .hero-logo {
+
+                width: min(330px, 80vw);
+            }
+
+            .hero-location {
+
+                font-size: 8px;
+
+                letter-spacing: .3em;
+
+                line-height: 1.8;
+            }
+
+            .hero-info,
+            .hero-info-right {
+
+                display: none;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .navbar {
+
+                padding: 18px 6%;
+            }
+
+            .nav-logo img {
+
+                width: 38px;
+                height: 38px;
+            }
+
+            .nav-name {
+
+                font-size: 22px;
+            }
+
+            .hero-logo {
+
+                width: 82vw;
+            }
+
+            .hero-title {
+
+                font-size: 24px;
+
+                padding: 0 20px;
+            }
+
+            .button {
+
+                width: 90%;
+
+                min-width: unset;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="navbar" id="navbar">
+
+        <a href="#" class="nav-logo">
+
+            <img src="logo.png" alt="Hotel de LaMêr">
+
+            <span class="nav-name">
+                LaMêr
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="#">
+                        El Hotel
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        La Suite
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Experiencias
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-reserve">
+                        Reservar
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PORTADA
+    ===================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-location">
+
+                    ROSABUN · REINO DE BOLLONIA
+
+                </div>
+
+
+                <img
+                    src="logo.png"
+                    alt="Hotel de LaMêr Boutique Hotel & Residence"
+                    class="hero-logo"
+                >
+
+
+                <div class="ornament"></div>
+
+
+                <h1 class="hero-title">
+
+                    Donde cada estancia se convierte en recuerdo.
+
+                </h1>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="button button-primary">
+
+                        Reservar estancia
+
+                    </a>
+
+
+                    <a href="#" class="button button-secondary">
+
+                        Descubrir LaMêr
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN DECORATIVA -->
+
+            <div class="hero-info">
+
+                BOUTIQUE HOTEL & RESIDENCE
+
+            </div>
+
+
+            <div class="hero-info-right">
+
+                EST. MMXXV
+
+            </div>
+
+
+
+            <!-- SCROLL -->
+
+            <div class="scroll">
+
+                DESCUBRIR
+
+                <div class="scroll-line"></div>
+
+            </div>
+
+
+
+            <!-- ONDAS INFERIORES -->
+
+            <div class="waves">
+
+                <div class="wave"></div>
+
+                <div class="wave"></div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 60) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+    </script>
+
+
+</body>
+</html>
